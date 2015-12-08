@@ -52,6 +52,7 @@ public class SystemViewerServlet extends HttpServlet {
       out.println("<title>Servlet System Viewer.</title>");
       out.println("</head>");
       out.println("<body>");
+      out.println("<p>Hello, World! This is auto rebuilt.</p>");
       out.println("<h1>System.getProperties()</h1>");
       System.out.println("<ol>");
       Iterator keys = System.getProperties().keySet().iterator();
