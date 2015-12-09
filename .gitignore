@@ -1,2 +1,8 @@
 .DS_Store
 target
+!.c9
+.c9/*
+!.c9/runners/
+!.c9/runners/*
+!.c9/builders/
+!.c9/builders/*

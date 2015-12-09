@@ -77,8 +77,7 @@
         <artifactId>gcloud-maven-plugin</artifactId>
         <version>2.0.9.89.v20151202</version>
         <configuration>
-            <host>${IP}:${PORT}</host>
-            <gcloud_directory>/usr/local/google-cloud-sdk</gcloud_directory>
+          <set_default>true</set_default>
         </configuration>
       </plugin>
     </plugins>
