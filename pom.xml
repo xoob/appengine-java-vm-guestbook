@@ -27,7 +27,7 @@
   <artifactId>guestbook-stage1</artifactId>
 
   <properties>
-    <appengine.target.version>1.9.30</appengine.target.version>
+    <appengine.target.version>1.9.31</appengine.target.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -60,10 +60,11 @@
   <build>
     <!-- needed for enabling compile/reload on save in mordern IDEs...-->
     <outputDirectory>target/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <version>2.5.1</version>
+        <version>3.3</version>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.7</source>
