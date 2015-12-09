@@ -91,6 +91,11 @@
         </a>
       </div>
       <div class="navbar-collapse collapse navbar-warning-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="https://c9.io">
+            powered by Cloud9 IDE</a></li>
+        </ul>
+
         <ul class="nav navbar-nav navbar-right">
           <% if (user != null) { %>
             <li class="dropdown">
@@ -112,7 +117,9 @@
   </div>
   
   <div class="container">
-    <h1 class="header">Guestbook Demo</h1>
+    <h1 class="header">
+      Guestbook Demo
+    </h1>
     
     <p>TEST: <a href="/SystemViewer">Click to see more information regarding the running JVM...</a></p>
     
