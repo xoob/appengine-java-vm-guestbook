@@ -121,40 +121,42 @@
       Guestbook Demo
     </h1>
     
-    <p>TEST: <a href="/SystemViewer">Click to see more information regarding the running JVM...</a></p>
+    <p>
+      <a href="/SystemViewer">Click to see more information regarding the running JVM...</a></p>
     
     <!-- List guestbook entries -->
     
-    <%
-      if (greetings.isEmpty()) {
-    %>
-      <p>Guestbook '${fn:escapeXml(guestbookName)}' has no messages.</p>
-    <%
-      } else {
-    %>
-      <p>Messages in Guestbook '${fn:escapeXml(guestbookName)}'.</p>
+    <div class="list-group well bs-component">
+      <% if (greetings.isEmpty()) { %>
+        <div class="alert alert-info">
+          Guestbook <strong>${fn:escapeXml(guestbookName)}</strong> is still
+          empty. Why not leave a message?
+        </div>
+      <% } %>
+      
       <%
         for (Entity greeting : greetings) {
-          pageContext.setAttribute("greeting_content",
-                                   greeting.getProperty("content"));
-                                   
-          if (greeting.getProperty("user") == null) {
-        %>
-          <p>An anonymous person wrote:</p>
-        <%
-          } else {
-            pageContext.setAttribute("greeting_user",
-                                     greeting.getProperty("user"));
-        %>
-          <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
-        <%
-          }
-        %>
-        <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
-      <%
-        }
-      }
-    %>
+          pageContext.setAttribute("greeting_content", greeting.getProperty("content"));
+          pageContext.setAttribute("greeting_user", greeting.getProperty("user"));
+      %>
+        <div class="list-group-item">
+          <div class="row-picture">
+            <img class="circle" src="http://api.adorable.io/avatars/50/${fn:escapeXml(greeting_user.nickname)}" alt="icon">
+          </div>
+          <div class="row-content">
+            <h4 class="list-group-item-heading">
+              <% if (greeting.getProperty("user") == null) { %>
+                Somebody anonymous wrote:
+              <% } else { %>
+                <strong>${fn:escapeXml(greeting_user.nickname)}</strong> wrote:
+              <% } %>
+            </h4>
+            <p class="list-group-item-text">${fn:escapeXml(greeting_content)}</p>
+          </div>
+        </div>
+        <div class="list-group-separator"></div>
+      <% } %>
+    </div>
   
     <!-- Guestbook form -->
     
