@@ -99,7 +99,7 @@
         <ul class="nav navbar-nav navbar-right">
           <% if (user != null) { %>
             <li class="dropdown">
-              <a data-target="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
                 ${fn:escapeXml(user.nickname)}
                 <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -126,7 +126,7 @@
     
     <!-- List guestbook entries -->
     
-    <div class="list-group well bs-component">
+    <div class="list-group">
       <% if (greetings.isEmpty()) { %>
         <div class="alert alert-info">
           Guestbook <strong>${fn:escapeXml(guestbookName)}</strong> is still
@@ -178,7 +178,7 @@
               <label for="ccode" class="col-md-2 control-label">Captcha</label>
               <div class="col-md-3">
                 <img src="/captcha"><br>
-                <input type="text" name="ccode" class="form-control">
+                <input type="text" name="ccode" class="form-control" autocomplete="off">
               </div>
           </div>
           
