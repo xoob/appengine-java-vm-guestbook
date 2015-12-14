@@ -99,16 +99,16 @@
         <ul class="nav navbar-nav navbar-right">
           <% if (user != null) { %>
             <li class="dropdown">
-              <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a data-target="#" class="dropdown-toggle" data-toggle="dropdown">
                 ${fn:escapeXml(user.nickname)}
                 <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">
+                <li><a href="<%= userService.createLogoutURL("/guestbook.jsp") %>">
                   Sign out</a></li>
               </ul>
             </li>
           <% } else { %>
-            <li><a href="<%= userService.createLoginURL(request.getRequestURI()) %>">
+            <li><a href="<%= userService.createLoginURL("/guestbook.jsp") %>">
               Sign in</a></li>
           <% } %>
         </ul>
@@ -141,7 +141,7 @@
       %>
         <div class="list-group-item">
           <div class="row-picture">
-            <img class="circle" src="http://api.adorable.io/avatars/50/${fn:escapeXml(greeting_user.nickname)}" alt="icon">
+            <img class="circle" src="https://robohash.org/robot${fn:escapeXml(greeting_user.nickname)}.png" alt="icon">
           </div>
           <div class="row-content">
             <h4 class="list-group-item-heading">
