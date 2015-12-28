@@ -58,7 +58,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- Material Design fonts -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
   <!-- Bootstrap -->
@@ -71,11 +71,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   
   <title>App Engine: Java Managed VM: Guestbook Demo</title>
-  
-  <style>
-    body {
-    }
-  </style>
 </head>
 <body>
   <div class="navbar navbar-warning">
